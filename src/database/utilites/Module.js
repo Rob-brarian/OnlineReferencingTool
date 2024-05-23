@@ -7,7 +7,7 @@ const debug = false; // if enabled, fills values of fields with default info
 //["#0"] - value from first element in array "fields_array"
 //["_text_"] - will print text
 //["+0_text_"] - will print text only if first element in array "fields_array" has value
-//["+0_text_"] - will print text only if first element in array "fields_array" doesn't have value
+//["-0_text_"] - will print text only if first element in array "fields_array" doesn't have value
 //Examples of use: ["+1#1_Text_"], [_(_#0_)_], ["-0-1#1#2"]
 //-----------------------
 function Module(fields, logic) {
@@ -17,7 +17,7 @@ function Module(fields, logic) {
   this.parent_div = null; //link to parent div
   this.fields_array = []; //array of created field inputs
 
-  //Takes div element and created inside html code
+  //Takes div element and creates inside html code
   this.create_html_code = (parent_div) => {
     this.parent_div = parent_div;
     this.parent_div.innerHTML = "";
